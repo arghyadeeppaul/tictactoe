@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+</head>
+<link rel="stylesheet" href="cla1.css">
+<body align="center" style="background-color:powderblue;">
+
+<h1>TIC TAC TOE (2 Player)</h1>
+<table align="center">
+  <tr>
+    <td><button type="button" class="cla1" onclick="func1(1)" id=0></button></td>
+    <td><button type="button" class="cla1" onclick="func1(2)" id=1></button></td>
+    <td><button type="button" class="cla1" onclick="func1(3)" id=2></button></td>
+  </tr>
+  <tr>
+    <td><button type="button" class="cla1" onclick="func1(4)" id=3></button></td>
+    <td><button type="button" class="cla1" onclick="func1(5)" id=4></button></td>
+    <td><button type="button" class="cla1" onclick="func1(6)" id=5></button></td>
+  </tr>
+  <tr>
+    <td><button type="button" class="cla1" onclick="func1(7)" id=6></button></td>
+    <td><button type="button" class="cla1" onclick="func1(8)" id=7></button></td>
+    <td><button type="button" class="cla1" onclick="func1(9)" id=8></button></td>
+  </tr>
+</table>
+
+<script>
+
+a=-1;
+b=[9,9,9,9,9,9,9,9,9];
+
+function func1(d){
+    console.log(b)    
+    console.log(a)  
+    sum=0;
+++a;              
+if(a%2==0)
+{
+b[d-1]=0;
+document.getElementById(d-1).innerHTML = "X";
+}
+if(a%2==1)
+{
+b[d-1]=1;
+document.getElementById(d-1).innerHTML = "O";
+}
+win=[b[0]+b[1]+b[2],b[3]+b[4]+b[5],b[6]+b[7]+b[8],b[0]+b[3]+b[6],b[1]+b[4]+b[7],b[2]+b[5]+b[8],b[0]+b[4]+b[8],b[2]+b[4]+b[6]];
+for(i=0;i<8;i++)
+{
+    sum+=b[i];
+if(win[i]==0||win[i]==3){
+if(a%2==0){
+alert("X has won");
+return 1;}
+if(a%2==1){
+alert("O has won");
+return 1;} 
+}
+if(sum==4)
+{
+    alert("DRAW");
+    return 0;
+}
+}
+}
+</script>
+</body>
+</html>
